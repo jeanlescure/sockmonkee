@@ -178,7 +178,8 @@ function append_link(msg, msg_in) {
   var bytes = new Uint8Array(arrayBuffer);
   var url = 'data:' + msg_obj.mime + ';base64,' + encode(bytes);
 
-  var msg_link = '<div class="msg ' + ((msg_in)? 'in' : 'out') + '"><a class="download" href="' + url + '" target="_blank" download="' + msg_obj.name + '"><img src="/img/icon_download.png" alt="download"/> ' + msg_obj.name + ' (' + msg_obj.size + ' bytes)</a></div>';
+  var name_span = ((msg_in)? '<br/><span class="user_name">' + msg.sender.name + '</span>' : '');
+  var msg_link = '<div class="msg ' + ((msg_in)? 'in' : 'out') + '"><a class="download" href="' + url + '" target="_blank" download="' + msg_obj.name + '"><img src="/img/icon_download.png" alt="download"/> ' + msg_obj.name + ' (' + msg_obj.size + ' bytes)</a>' + name_span + '</div>';
   $('.messages').append(msg_link);
   $('.messages').animate({ scrollTop: 2147483647 }, 750);
 
