@@ -1,0 +1,239 @@
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  color: #fdfefe;
+  background: #3f77a4; /* Old browsers */
+  background: -webkit-linear-gradient(top,  #3f77a4, #8bd0b6, #6eb880 70%, #26444c);
+  background: -moz-linear-gradient(top,  #3f77a4, #8bd0b6, #6eb880 70%, #26444c);
+  background: -o-linear-gradient(top,  #3f77a4, #8bd0b6, #6eb880 70%, #26444c);
+  background: -ms-linear-gradient(top,  #3f77a4, #8bd0b6, #6eb880 70%, #26444c);
+  background: linear-gradient(top,  #3f77a4, #8bd0b6, #6eb880 70%, #26444c);
+  overflow: hidden;
+}
+*:focus {outline:none;}
+
+a, a:visited, a:focus {
+  color: #b5b5ff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #a0a0ff;
+}
+
+a.download {
+  display: inline-block;
+  padding: 5px 0 3px 34px;
+  position: relative;
+}
+
+a.download img {
+  width: 30px;
+  display: block;
+  position: absolute;
+  top: 7px;
+  left: 0;
+}
+
+.message_field {
+  width: 100%;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.message_field .text {
+  position: absolute;
+  top: 5px;
+  bottom: 5px;
+  left: 60px;
+  right: 110px;
+}
+.message_field .text textarea {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background: transparent;
+  color: #fdfefe;
+  border: none;
+  font-size: 16px;
+  width: 100%;
+  height: 100%;
+}
+
+.messages_holder {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.messages {
+  position: absolute;
+  top: 36px;
+  left: 0;
+  right: 0;
+  bottom: 50px;
+  overflow: auto;
+}
+.messages .msg {
+  margin: 10px;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 8px 12px;
+  border-radius: 5px;
+  clear: both;
+  position: relative;
+  -webkit-transition: margin-left 0.5s, margin-right 0.5s; /* Safari */
+  transition: margin-left 0.5s, margin-right 0.5s;
+  word-wrap: break-word;
+  max-width: calc(100% - 60px);
+}
+.messages .in {
+  float: left;
+  margin-left: -100%;
+  background-color: rgba(0, 44, 0, 0.3);
+}
+.messages .out {
+  float: right;
+  margin-right: -100%;
+  background-color: rgba(0, 0, 44, 0.3);
+}
+.messages .in.shown {
+  margin-left: 25px;
+}
+.messages .out.shown {
+  margin-right: 25px;
+}
+.messages .in:before, .messages .out:before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 50%;
+  margin-top: -5px;
+}
+.messages .in:before {
+  left: -15px;
+}
+.messages .out:before {
+  right: -15px;
+}
+.msg .user_name {
+  font-size: 14px;
+  color: #ceceda;
+}
+
+.btn {
+  position: absolute;
+  top: 5px;
+  height: 40px;
+  border-radius: 5px;
+  background: transparent;
+  color: #fdfefe;
+  border: 1px #adaeae solid;
+}
+.btn_attach {
+  left: 5px;
+  width: 50px;
+}
+.btn:hover {
+  background: #adaeae;
+  cursor: pointer;
+}
+.btn_send {
+  right: 5px;
+  width: 100px;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.modal {
+  background-color: rgba(255, 255, 255, 0.3);
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -100px;
+  padding: 10px 30px 30px 30px;
+  width: 200px;
+  height: 150px;
+  border-radius: 5px;
+  position: absolute;
+  text-align: center;
+}
+
+.modal #name {
+  border-radius: 3px;
+  background: transparent;
+  border: 1px #ffffff solid;
+  padding: 2px;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.modal #name.error {
+  border: 1px #e50000 solid;
+}
+
+.modal button {
+  font-size: 16px;
+  width: 50px;
+  position: static;
+  border: 1px #ffffff solid;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.users {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 32px;
+  background-color: rgba(0, 0, 0, 0.3);
+  list-style: none;
+  overflow: hidden;
+  padding: 4px 0 0 0;
+  margin: 0;
+}
+
+.users li {
+  list-style: disc;
+  display: inline-block;
+  padding-top: 24px;
+  padding-left: 20px;
+  -webkit-transition: padding-top 0.5s; /* Safari */
+  transition: padding-top 0.5s;
+  position: relative;
+}
+
+.users li.shown {
+  padding-top: 0px;
+}
+
+.users li.self {
+  color: #a4c4ff;
+}
+
+.users li:before{
+  content: "";
+  display: list-item;
+  position: absolute;
+  left: 30px;
+}
+
+.hidden {
+  display: none;
+}
