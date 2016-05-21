@@ -91,14 +91,14 @@ $(function(){
         size: ev.target.files[0].size
       };
 
-      append_link(msg);
-
       var sock_msg = {
         sender: { user: USER, id: SOCK_ID },
         msg: msg,
         type: 'file',
         timestamp: moment().valueOf()
       }
+
+      append_link(sock_msg);
 
       socket.emit('sock.message', sock_msg);
     });
