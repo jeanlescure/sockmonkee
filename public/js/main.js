@@ -92,7 +92,7 @@ $(function(){
       };
 
       var sock_msg = {
-        sender: { user: USER, id: SOCK_ID },
+        sender: { name: USER, id: SOCK_ID },
         msg: msg,
         type: 'file',
         timestamp: moment().valueOf()
