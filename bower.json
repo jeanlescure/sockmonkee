@@ -1,0 +1,20 @@
+{
+  "name": "sockprimate",
+  "description": "",
+  "main": "server.js",
+  "authors": [
+    "Jean M. Lescure"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Sockmonkee/sockmonkee",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "underscore": "^1.8.3"
+  }
+}
