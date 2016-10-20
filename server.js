@@ -7,6 +7,8 @@ var io = require('socket.io')(http);
 var uuid = require('node-uuid');
 
 var port = process.env.PORT || 3000;
+var debug_env_val = process.env.DEBUG || false;
+var debug = (debug_env_val === 'true');
 
 app.get('/', function(req, res) {
   res.redirect(301, '/' + uuid.v4());
@@ -28,12 +30,12 @@ io.on('connection', function(socket) {
 
   socket.on('sock.join.' + ROOM_ID, function(user){
     io.emit('sock.enter.' + ROOM_ID, user);
-    console.log('User (' + socket.conn.id + ') connected to room: ' + ROOM_ID);
+    if (debug) console.log('User (' + user.id + ') connected to room: ' + ROOM_ID);
   });
 
   socket.on('sock.ack.' + ROOM_ID, function(ack) {
     io.emit('sock.ack.' + ROOM_ID + '.' + ack.to, ack.from);
-    console.log('User (' + ack.from.id + ') acknowledged: ' + ack.to);
+    if (debug) console.log('User (' + ack.from.id + ') acknowledged: ' + ack.to);
   });
 });
 

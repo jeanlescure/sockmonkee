@@ -9,22 +9,24 @@ socket.on('connect', function(){
     socket.removeListener('sock.broadcast.' + ROOM_ID + '.' + SOCK_ID, bcastHandle);
   }
 
-  SOCK_ID = socket.id;
+  new Fingerprint2().get(function(result, components){
+    SOCK_ID = result;
 
-  socket.on('sock.enter.' + ROOM_ID, function(user){
-    listenTo(user.id);
-    if (verify_user() && user.id !== SOCK_ID) socket.emit('sock.ack.' + ROOM_ID, { to: user.id, from: { name: USER, id: SOCK_ID } });
-    append_name(user.name, user.id);
-    console.log('entered: ', user);
-  });
+    socket.on('sock.enter.' + ROOM_ID, function(user){
+      listenTo(user.id);
+      if (verify_user() && user.id !== SOCK_ID) socket.emit('sock.ack.' + ROOM_ID, { to: user.id, from: { name: USER, id: SOCK_ID } });
+      append_name(user.name, user.id);
+      console.log('entered: ', user);
+    });
 
-  socket.on('sock.ack.' + ROOM_ID + '.' + SOCK_ID, function(user){
-    listenTo(user.id);
-    append_name(user.name, user.id);
-    console.log('acknowledged: ', user);
+    socket.on('sock.ack.' + ROOM_ID + '.' + SOCK_ID, function(user){
+      listenTo(user.id);
+      append_name(user.name, user.id);
+      console.log('acknowledged: ', user);
+    });
+    
+    join();
   });
-  
-  join();
 });
 
 function join() {
