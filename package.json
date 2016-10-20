@@ -1,10 +1,11 @@
 {
-  "name": "sockprimate",
+  "name": "sockmonkee",
   "version": "0.0.1",
-  "description": "",
+  "description": "This is a WIP of an unfederated and ephemeral system of text and file transmission.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "Jean M. Lescure",
   "license": "MIT",
@@ -13,5 +14,14 @@
     "express": "^4.13.4",
     "node-uuid": "^1.4.7",
     "socket.io": "^1.4.6"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeanlescure/sockmonkee.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jeanlescure/sockmonkee/issues"
+  },
+  "homepage": "https://github.com/jeanlescure/sockmonkee#readme"
 }

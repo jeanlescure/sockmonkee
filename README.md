@@ -2,7 +2,7 @@
 
 This is a WIP of an unfederated and ephemeral system of text and file transmission.
 
-Built using Socket.io
+Built using [Socket.io](http://socket.io/)
 
 Copyright &copy; TicoWebMedia 2016
 
@@ -12,17 +12,11 @@ Copyright &copy; TicoWebMedia 2016
 2. Go in the repo and run:
 
 ```bash
-npm install
+$ npm install
 ```
 
-3. Run:
+3. Ready to go!
 
 ```bash
-bower install
-```
-
-4. Ready to go!
-
-```bash
-node server.js
+$ npm start
 ```

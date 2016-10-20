@@ -23,7 +23,7 @@ socket.on('connect', function(){
     append_name(user.name, user.id);
     console.log('acknowledged: ', user);
   });
-
+  
   join();
 });
 
@@ -84,7 +84,7 @@ $(function(){
     var fr = new FileReader();
 
     fr.addEventListener('loadend', function() {
-      var msg = {
+      var msg = { 
         data: fr.result,
         mime: ev.target.files[0].type,
         name: ev.target.files[0].name,
@@ -198,7 +198,7 @@ function encode (input) {
 
     while (i < input.length) {
         chr1 = input[i++];
-        chr2 = i < input.length ? input[i++] : Number.NaN; // Not sure if the index
+        chr2 = i < input.length ? input[i++] : Number.NaN; // Not sure if the index 
         chr3 = i < input.length ? input[i++] : Number.NaN; // checks are needed here
 
         enc1 = chr1 >> 2;
