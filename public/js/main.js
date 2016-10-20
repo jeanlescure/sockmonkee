@@ -92,7 +92,7 @@ $(function(){
       };
 
       var sock_msg = {
-        sender: { user: USER, id: SOCK_ID },
+        sender: { name: USER, id: SOCK_ID },
         msg: msg,
         type: 'file',
         timestamp: moment().valueOf()
@@ -167,7 +167,7 @@ function append_msg(msg, msg_in) {
 function new_msg(msg, msg_in) {
   if (typeof msg_in === 'undefined') msg_in = false;
   var name_span = ((msg_in)? '<br/><span class="user_name">' + msg.sender.name + '</span>' : '');
-  return '<div class="msg ' + ((msg_in)? 'in' : 'out') + '">' + msg.msg.replace(/(\r\n|\n)/g,'<br/>') + name_span + '</div>';
+  return '<div class="msg ' + ((msg_in)? 'in' : 'out') + '">' + _.escape(msg.msg).replace(/(\r\n|\n)/g,'<br/>') + name_span + '</div>';
 }
 
 function append_link(msg, msg_in) {
