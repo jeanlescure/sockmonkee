@@ -22,7 +22,7 @@ app.get('/:room', function(req, res) {
 app.use(express.static('public'));
 
 io.on('connection', function(socket) {
-  var ROOM_ID = socket.handshake.headers.referer.replace(/^.*?([^\/]*?)\/{0,1}$/g,"$1");
+  var ROOM_ID = (typeof socket.handshake.headers.referer === 'undefined')? 'no-room' : socket.handshake.headers.referer.replace(/^.*?([^\/]*?)\/{0,1}$/g,"$1");
 
   socket.on('sock.message', function(msg) {
     io.emit('sock.broadcast.' + ROOM_ID + '.' + msg.sender.id, msg);
