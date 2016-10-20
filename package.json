@@ -1,6 +1,6 @@
 {
   "name": "sockmonkee",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "This is a WIP of an unfederated and ephemeral system of text and file transmission.",
   "main": "server.js",
   "scripts": {
